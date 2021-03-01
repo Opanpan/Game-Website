@@ -439,4 +439,203 @@ header {
   box-sizing: border-box;
 }
 
+/* ------------------------------------------------------------------ Subcribe Section ------------------------------------ */
+
+.bgEnam {
+  background-image: url(./img/subscribe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.containerSubcribe {
+  margin: auto;
+  height: 100%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr 0.5fr 0.5fr;
+  grid-template-areas:
+    "content1 content2"
+    "footer1 footer1"
+    "footer2 footer2";
+}
+
+.content-right {
+  grid-area: content2;
+  place-self: center end;
+}
+
+.item-right h3 {
+  font-family: Arial;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.item-right h1 {
+  font-family: Arial;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.item-right p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: white;
+  margin-top: 50px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding-left: 16px;
+  margin-top: 5px;
+  border: none;
+  background-color: #1b1d1e;
+  color: #ffb548;
+}
+
+input:focus {
+  outline: none;
+}
+
+.box h4 {
+  margin: 0;
+}
+
+.box {
+  margin-top: 50px;
+  margin-right: 18px;
+  background-color: #1b1d1e;
+  height: 60px;
+  width: 50%;
+}
+
+.content-left {
+  grid-area: content1;
+  place-self: end center;
+}
+
+.footer1 {
+  grid-area: footer1;
+  display: grid;
+  grid-template-columns: repeat (2, 1fr);
+  grid-template-areas: "left right";
+  align-self: center;
+  justify-self: end;
+}
+
+.footer1-left {
+  grid-area: left;
+  margin-right: 85px;
+}
+
+.footer-right {
+  grid-area: right;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+}
+
+ul.items {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.items li {
+  margin-left: 60px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 10%;
+  text-transform: uppercase;
+}
+
+.twitter-sub {
+  background-image: url(./img/twittersub.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: 16px;
+}
+
+.twitch {
+  background-image: url(./img/twitch.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 19px;
+  height: 18px;
+}
+
+.youtube {
+  background-image: url(./img/Vector.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;
+  height: 18px;
+}
+
+.facebook {
+  background-image: url(./img/facebook.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 9px;
+  height: 19px;
+}
+
+.footer2 {
+  grid-area: footer2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.5fr 1fr;
+  grid-template-areas:
+    "top top"
+    "left right";
+}
+
+.footer2-top {
+  grid-area: top;
+}
+
+.text #date {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  margin: 0;
+}
+
+.footer2-left {
+  grid-area: left;
+}
+
+.footer2-right {
+  grid-area: right;
+  place-self: start end;
+}
+
+.text #privacy {
+  font-size: 1rem;
+  font-family: Open Sans;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 /* Responsive */
