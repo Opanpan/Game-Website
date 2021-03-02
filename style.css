@@ -7,22 +7,6 @@ body {
   font-family: Open Sans;
 }
 
-.bg {
-  background-image: url(./img/main-bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
-}
-
-.bgTiga {
-  background-image: url(./img/features.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
-}
-
 h1 {
   font-family: Arial;
   letter-spacing: 3px;
@@ -38,65 +22,9 @@ h3 {
   font-family: Arial;
 }
 
-.item-satu h3 {
-  margin: 0;
-  font-weight: 400;
-}
-
-.item-satu h1 {
-  margin: 0;
-  font-weight: 400;
-}
-
-.item.menu ul,
-.item.login ul {
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.item.menu li,
-.item.login li {
-  padding: 0 60px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: white;
-  box-sizing: border-box;
-}
-
-.item-dua li {
-  font-size: 2rem;
-  letter-spacing: 2px;
-  color: #ffb548;
-  text-transform: uppercase;
-  margin-top: 36px;
-}
-
-.item-dua li span {
-  margin-left: 6px;
-}
-
-.ulFeature p {
-  font-family: Open Sans;
-  font-size: 1.3rem;
-  font-weight: 400px;
-  color: white;
-  margin-bottom: 28px;
-}
-
-.footer p {
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
-}
-
 a {
   text-decoration: none;
   color: white;
-  /* transition-duration: 0.4s; */
 }
 
 a:hover {
@@ -122,7 +50,102 @@ button:hover {
   transform: scale(1.1);
 }
 
-.container {
+span {
+  margin-left: 6px;
+}
+
+/* ------------------------------------------------------------------ Index Section ------------------------------------ */
+
+.bgIndex {
+  background-image: url(./img/main-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+
+.navbar {
+  width: 100%;
+  height: 90px;
+  display: grid;
+  background: rgba(0, 0, 0, 0.5);
+  grid-template-columns: 0.5fr 2fr 1fr;
+  grid-template-areas: "brand menu login";
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item.menu ul,
+.item.login ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.item.menu li,
+.item.login li {
+  padding: 0 60px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  box-sizing: border-box;
+}
+
+.brand {
+  grid-area: brand;
+  color: white;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.login {
+  grid-area: login;
+}
+
+.content {
+  width: 90%;
+  margin: 220px auto 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.scroll-down {
+  background-image: url(./img/scroll\ down.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  margin: 0 auto;
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  margin-top: 17%;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------ Features Section ------------------------------------ */
+
+.bgFeatures {
+  background-image: url(./img/features.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+
+.containerFeatures {
   height: 100%;
   width: 100%;
   display: grid;
@@ -132,12 +155,6 @@ button:hover {
     "header header"
     ". content"
     "footer footer";
-}
-
-@media (max-width: 768px) {
-  .feature {
-    justify-content: center;
-  }
 }
 
 .contentTiga {
@@ -163,52 +180,41 @@ button:hover {
   grid-area: item2;
 }
 
-.footer {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  bottom: 0;
-  text-align: center;
+.item-satu h3 {
+  margin: 0;
+  font-weight: 400;
 }
 
-.navbar {
-  width: 100%;
-  height: 90px;
-  display: grid;
-  background: rgba(0, 0, 0, 0.5);
-  grid-template-columns: 0.5fr 2fr 1fr;
-  grid-template-areas: "brand menu login";
+.item-satu h1 {
+  margin: 0;
+  font-weight: 400;
 }
 
-.item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.item-dua li {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #ffb548;
+  text-transform: uppercase;
+  margin-top: 36px;
 }
 
-.brand {
-  grid-area: brand;
+.ulFeature p {
+  font-family: Open Sans;
+  font-size: 1.3rem;
+  font-weight: 400px;
   color: white;
+  margin-bottom: 28px;
 }
 
-.menu {
-  grid-area: menu;
-}
-
-.login {
-  grid-area: login;
-}
-
-.content {
-  width: 90%;
-  margin: 220px auto 0 auto;
-  box-sizing: border-box;
-  text-align: center;
+.footer p {
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
 }
 
 /* ------------------------------------------------------------------ System Requirements Section ------------------------------------ */
 
-.bgEmpat {
+.bgSystem {
   background-image: url(./img/requirements.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -652,7 +658,7 @@ hr {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1.5fr;
   grid-template-areas: "content1 content2";
 }
 
