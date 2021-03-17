@@ -513,11 +513,11 @@ input:focus {
   outline: none;
 }
 
-.box h4 {
+.box-email h4 {
   margin: 0;
 }
 
-.box {
+.box-email {
   margin-top: 50px;
   margin-right: 18px;
   background-color: #1b1d1e;
@@ -829,4 +829,72 @@ h3 {
 #slide3:checked ~ #bullets label:nth-child(3),
 #slide4 :checked ~ #bullets label:nth-child(4) {
   background: white;
+}
+
+/* ------------------------------------------------------------------ Features Section ------------------------------------ */
+
+.bgGames {
+  background-color: #9c835f;
+  height: 100%;
+  width: 100%;
+}
+
+.container-games {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+  grid-template-areas:
+    "header header header"
+    "contentLeft contentCenter contentRight"
+    ". footer .";
+}
+
+.container-games .header {
+  grid-area: header;
+}
+
+.section-game-left {
+  grid-area: contentLeft;
+  place-self: center end;
+}
+
+.player-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-container .box {
+  background-color: none;
+  margin: 50px 0 0 0;
+  width: 223px;
+  height: 204px;
+  display: grid;
+  border-radius: 30px;
+  grid-template-columns: 1fr;
+}
+
+.player-container .box:hover {
+  background-color: #c4c4c4;
+}
+
+.box img {
+  width: 70%;
+  height: 70%;
+  place-self: center;
+}
+
+.player-container h2 {
+  font-size: 3rem;
+}
+
+.section-games-center {
+  grid-area: contentCenter;
+}
+
+.section-game-right {
+  grid-area: contentRight;
+  place-self: center start;
 }
