@@ -851,8 +851,34 @@ h3 {
     ". footer .";
 }
 
+.player-container h2 {
+  margin-top: 0;
+}
+
 .container-games .header {
   grid-area: header;
+}
+
+.item-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.rps-logo img {
+  width: 72px;
+  height: 72px;
+  margin: 27;
+}
+
+.item-header h2 {
+  font-size: 3rem;
+  color: #f9b23d;
+  margin: 40 0 0 0;
+}
+
+.item-header h1 {
+  color: 724c21;
+  margin: 27 27 0 27;
 }
 
 .section-game-left {
@@ -875,12 +901,18 @@ h3 {
 }
 
 .player-container .box {
-  background-color: none;
-  margin: 50px 0 0 0;
+  margin: 25px 0 0 0;
   width: 223px;
   height: 204px;
   display: grid;
   border-radius: 30px;
+  grid-template-columns: 1fr;
+}
+
+.box-img {
+  width: 77px;
+  height: 71px;
+  display: grid;
   grid-template-columns: 1fr;
 }
 
@@ -892,15 +924,21 @@ h3 {
   background-color: #c4c4c4;
 }
 
-.box img {
+.player-container .box img {
   width: 70%;
   height: 70%;
   place-self: center;
 }
 
+.footer .box img {
+  width: 77px;
+  height: 71px;
+}
+
 .player-container h2 {
   letter-spacing: 10px;
   font-size: 3rem;
+  margin-bottom: 0;
 }
 
 .redText {
@@ -936,4 +974,10 @@ h3 {
   font-weight: 700;
   text-align: center;
   place-self: center;
+}
+
+.container-games .footer {
+  grid-area: footer;
+  place-self: center;
+  margin-top: 0;
 }
