@@ -888,6 +888,10 @@ h3 {
   background-color: #c4c4c4;
 }
 
+.bgGrey {
+  background-color: #c4c4c4;
+}
+
 .box img {
   width: 70%;
   height: 70%;
@@ -895,7 +899,14 @@ h3 {
 }
 
 .player-container h2 {
+  letter-spacing: 10px;
   font-size: 3rem;
+}
+
+.redText {
+  color: #bd0000;
+  font-size: 12rem;
+  letter-spacing: 10px;
 }
 
 .section-game-right {
