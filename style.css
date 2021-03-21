@@ -866,6 +866,14 @@ h3 {
   flex-direction: column;
 }
 
+.section-game-left .player-container {
+  margin-right: 50px;
+}
+
+.section-game-right .player-container {
+  margin-left: 50px;
+}
+
 .player-container .box {
   background-color: none;
   margin: 50px 0 0 0;
@@ -890,11 +898,31 @@ h3 {
   font-size: 3rem;
 }
 
-.section-games-center {
-  grid-area: contentCenter;
-}
-
 .section-game-right {
   grid-area: contentRight;
   place-self: center start;
+}
+
+.section-games-center {
+  grid-area: contentCenter;
+  place-self: center;
+}
+
+.boxResult {
+  width: 270px;
+  height: 160px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "resultCenter";
+  background-color: #4c9654;
+  border-radius: 10px;
+  transform: rotate(-28.87deg);
+}
+
+.textResult {
+  grid-area: resultCenter;
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-align: center;
+  place-self: center;
 }
