@@ -9,7 +9,7 @@ class Player {
   }
 
   resetHand(choice) {
-    choice.style.backgroundColor = "transparent";
+    choice.classList.remove("bgGrey");
   }
 }
 
@@ -38,7 +38,7 @@ class Com extends Player {
   resetHand(choices) {
     choices.forEach((choice) => {
       if (choice.id == this.hand) {
-        choice.style.backgroundColor = "transparent";
+        choice.classList.remove("bgGrey");
       }
     });
   }
@@ -83,11 +83,7 @@ class Match {
     }
   }
 
-  showResult() {
-    const boxResult = document.querySelector("#boxResult");
-    boxResult.classList.add("boxResult");
-    const textResult = document.querySelector("#textResult");
-
+  showResult(boxResult, textResult) {
     if (textResult.classList.contains("redText")) {
       textResult.classList.remove("redText");
     }
@@ -106,6 +102,14 @@ class Match {
     if (this.getResult() == `PLAYER 1 WIN` || this.getResult() == `COM WIN`) {
       boxResult.style.backgroundColor = `#4c9654`;
     }
+  }
+
+  resetResult(boxResult, textResult) {
+    boxResult.classList.remove("boxResult");
+    boxResult.style.backgroundColor = "transparent";
+    textResult.classList.remove("textResult");
+    textResult.classList.add("redText");
+    textResult.textContent = "VS";
   }
 }
 // Mengambil Tiap Elemen
@@ -142,14 +146,18 @@ playerChoices.forEach((choice) => {
     console.log(newCom);
 
     const newMatch = new Match(player, newCom);
+    const boxResult = document.querySelector("#boxResult");
+    boxResult.classList.add("boxResult");
+    const textResult = document.querySelector("#textResult");
     newMatch.getResult();
-    newMatch.showResult();
+    newMatch.showResult(boxResult, textResult);
     console.log(newMatch.getResult());
 
-    // const elRefresh = document.querySelector(".refresh");
-    // elRefresh.addEventListener("click", () => {
-    //   player.resetHand(choice);
-    //   newCom.resetHand(boxComChoices);
-    // });
+    const elRefresh = document.querySelector("#refresh");
+    elRefresh.addEventListener("click", () => {
+      player.resetHand(choice);
+      newCom.resetHand(boxComChoices);
+      newMatch.resetResult(boxResult, textResult);
+    });
   });
 });
