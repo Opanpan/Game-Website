@@ -876,7 +876,7 @@ h3 {
   grid-template-columns: 1fr;
 }
 
-.player-container .box:hover {
+.section-game-left .box:hover {
   background-color: #c4c4c4;
 }
 
