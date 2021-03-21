@@ -49,6 +49,25 @@ class Match {
       if (handCom == "paper") {
         return "COM WIN";
       }
+      if (handCom == "scissors") {
+        return "PLAYER WIN";
+      }
+    }
+    if (handPlayer == "paper") {
+      if (handCom == "rock") {
+        return `PLAYER WIN`;
+      }
+      if (handCom == "scissors") {
+        return `COM WIN`;
+      }
+    }
+    if (handPlayer == "scissors") {
+      if (handCom == "rock") {
+        return `COM WIN`;
+      }
+      if (handCom == "paper") {
+        return `PLAYER WIN`;
+      }
     }
   }
 }
