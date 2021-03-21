@@ -30,7 +30,7 @@ class Com extends Player {
     this.hand = comChoices[i];
     choices.forEach((choice) => {
       if (this.hand == choice.id) {
-        choice.style.backgroundColor = "#c4c4c4";
+        choice.classList.add("bgGrey");
       }
     });
   }
@@ -119,6 +119,14 @@ playerChoices.forEach((choice) => {
     // Membersihan Pilihan Player Sebelumnya
     const newElPlayer = document.querySelectorAll(".player");
     newElPlayer.forEach((el) => {
+      if (el.classList.contains("bgGrey")) {
+        el.classList.remove("bgGrey");
+      }
+    });
+
+    // Membersihkan Pilihan Com Sebelumnya
+    const newElCom = document.querySelectorAll(".com");
+    newElCom.forEach((el) => {
       if (el.classList.contains("bgGrey")) {
         el.classList.remove("bgGrey");
       }
