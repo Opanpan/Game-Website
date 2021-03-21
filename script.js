@@ -5,7 +5,7 @@ class Player {
 
   getHand(choice) {
     this.hand = choice.id;
-    choice.style.backgroundColor = "#c4c4c4";
+    choice.classList.add("bgGrey");
   }
 
   resetHand(choice) {
@@ -62,12 +62,12 @@ class Match {
         return "COM WIN";
       }
       if (handCom == "scissors") {
-        return "PLAYER WIN";
+        return "PLAYER 1 WIN";
       }
     }
     if (handPlayer == "paper") {
       if (handCom == "rock") {
-        return `PLAYER WIN`;
+        return `PLAYER 1 WIN`;
       }
       if (handCom == "scissors") {
         return `COM WIN`;
@@ -78,36 +78,52 @@ class Match {
         return `COM WIN`;
       }
       if (handCom == "paper") {
-        return `PLAYER WIN`;
+        return `PLAYER 1 WIN`;
       }
     }
   }
 
   showResult() {
     const boxResult = document.querySelector("#boxResult");
-    boxResult.classList.toggle("boxResult");
+    boxResult.classList.add("boxResult");
     const textResult = document.querySelector("#textResult");
-    textResult.classList.toggle("textResult");
-    if (this.getResult() == `PLAYER WIN`) {
-      textResult.textContent = `PLAYER 1 WIN`;
+
+    if (textResult.classList.contains("redText")) {
+      textResult.classList.remove("redText");
+    }
+
+    textResult.classList.add("textResult");
+    if (this.getResult() == `PLAYER 1 WIN`) {
+      textResult.textContent = this.getResult();
     }
     if (this.getResult() == `DRAW`) {
-      textResult.textContent = `DRAW`;
+      textResult.textContent = this.getResult();
       boxResult.style.backgroundColor = "#035B0C";
     }
     if (this.getResult() == `COM WIN`) {
-      textResult.textContent = `COM WIN`;
+      textResult.textContent = this.getResult();
+    }
+    if (this.getResult() == `PLAYER 1 WIN` || this.getResult() == `COM WIN`) {
+      boxResult.style.backgroundColor = `#4c9654`;
     }
   }
 }
-
+// Mengambil Tiap Elemen
 const playerChoices = document.querySelectorAll(".player");
 
-// Mengambil Tiap Elemen dan merubahnya menjadi objek
-
+//Lalu Merubahnya Menjadi Objek Setiap element yang di click
 playerChoices.forEach((choice) => {
   // Tambahkan logic untuk pilihan
+
   choice.addEventListener("click", () => {
+    // Membersihan Pilihan Player Sebelumnya
+    const newElPlayer = document.querySelectorAll(".player");
+    newElPlayer.forEach((el) => {
+      if (el.classList.contains("bgGrey")) {
+        el.classList.remove("bgGrey");
+      }
+    });
+
     const player = new Player1();
     player.getHand(choice);
     console.log(player);
