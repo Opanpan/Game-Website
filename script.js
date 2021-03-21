@@ -53,6 +53,7 @@ class Match {
   getResult(handPlayer, handCom) {
     handPlayer = this.player1.hand;
     handCom = this.com.hand;
+
     if (handPlayer == handCom) {
       return `DRAW`;
     }
@@ -81,6 +82,23 @@ class Match {
       }
     }
   }
+
+  showResult() {
+    const boxResult = document.querySelector("#boxResult");
+    boxResult.classList.toggle("boxResult");
+    const textResult = document.querySelector("#textResult");
+    textResult.classList.toggle("textResult");
+    if (this.getResult() == `PLAYER WIN`) {
+      textResult.textContent = `PLAYER 1 WIN`;
+    }
+    if (this.getResult() == `DRAW`) {
+      textResult.textContent = `DRAW`;
+      boxResult.style.backgroundColor = "#035B0C";
+    }
+    if (this.getResult() == `COM WIN`) {
+      textResult.textContent = `COM WIN`;
+    }
+  }
 }
 
 const playerChoices = document.querySelectorAll(".player");
@@ -88,6 +106,7 @@ const playerChoices = document.querySelectorAll(".player");
 // Mengambil Tiap Elemen dan merubahnya menjadi objek
 
 playerChoices.forEach((choice) => {
+  // Tambahkan logic untuk pilihan
   choice.addEventListener("click", () => {
     const player = new Player1();
     player.getHand(choice);
@@ -100,12 +119,13 @@ playerChoices.forEach((choice) => {
 
     const newMatch = new Match(player, newCom);
     newMatch.getResult();
+    newMatch.showResult();
     console.log(newMatch.getResult());
 
-    const elRefresh = document.querySelector(".refresh");
-    elRefresh.addEventListener("click", () => {
-      player.resetHand(choice);
-      newCom.resetHand(boxComChoices);
-    });
+    // const elRefresh = document.querySelector(".refresh");
+    // elRefresh.addEventListener("click", () => {
+    //   player.resetHand(choice);
+    //   newCom.resetHand(boxComChoices);
+    // });
   });
 });
